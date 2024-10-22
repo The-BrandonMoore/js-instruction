@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JavaScript Test</title>
+  </head>
+  <body>
+    <h2>The Time</h2>
+
+    The current time is <span id="currentTime"> <i>time goes here!</i> </span
+    ><br />
+    <button
+      onclick="document.getElementById('currentTime').textContent = (new Date()).toLocaleTimeString();"
+    >
+      Update the Time
+    </button>
+    <br />
+    <button onclick="UpdateTime()">Update Time Via Function</button>
+    <br />
+    <button id="UpdateButton">A Clean Update Button</button>
+
+    <script>
+      function UpdateTime() {
+        document.getElementById("currentTime").textContent =
+          new Date().toLocaleTimeString();
+      }
+      var updateButton = document.getElementById("UpdateButton");
+      updateButton.onclick = function (e) {
+        document.getElementById("currentTime").textContent =
+          new Date().toLocaleTimeString();
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script>
+      let friends = [];
+      function addFriend() {
+        let newFriend = document.getElementById("friend").value;
+        let table = document.getElementById("friendList");
+        //below add friend to array
+        friends.push(newFriend);
+        table.insertRow().insertCell().innerText = newFriend;
+        let clearBox = document.getElementById("friend");
+        clearBox.value = "";
+      }
+    </script>
+    <title>Friends List - JS</title>
+  </head>
+  <body>
+    <h1>Friend's List - JS</h1>
+    <table id="friendList" class="table table-striped">
+      <th>Friend</th>
+    </table>
+    <div>
+      <form action="addFriend()">
+        New Friend Name:
+        <input type="text" placeholder="Enter Friend Here" id="friend" />
+        <button id="addFriend" onclick="addFriend()">Add Friend</button>
+      </form>
+    </div>
+  </body>
+</html>
